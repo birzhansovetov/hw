@@ -14,7 +14,7 @@ public class EnemyManager {
         this.enemies.add(enemies);
     }
 
-    public List<String> GetEnemies(){
+    public List<String> getEnemies(){
         return this.enemies;
     }
     public void fightEnemy(String enemy,Player player){
