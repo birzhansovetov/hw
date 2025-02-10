@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EnemyManager {
+public class EnemyManager implements IEnemyManager{
     List<String> enemies;
     public EnemyManager(){
         this.enemies = new ArrayList<>();
@@ -14,9 +14,11 @@ public class EnemyManager {
         this.enemies.add(enemies);
     }
 
+    @Override
     public List<String> getEnemies(){
         return this.enemies;
     }
+    @Override
     public void fightEnemy(String enemy,Player player){
         if (enemy.equals("Zombie")){
             player.damage(10);

@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemManager {
+public class ItemManager implements IItemManager {
     private List<String> item;
     private List<String> inventory;
     public ItemManager(){
@@ -12,11 +12,10 @@ public class ItemManager {
         item.add("Gold Coin");
         item.add("Health Elixir");
     }
-
     public void AddItem(String item){
         this.item.add(item);
     }
-
+    @Override
     public List<String> GetItems(){
         return this.item;
     }
@@ -27,7 +26,7 @@ public class ItemManager {
         return this.inventory;
     }
 
-
+    @Override
     public void pickUpItem(String item,Player player){
 
         if (item.equals("Gold Coin")){

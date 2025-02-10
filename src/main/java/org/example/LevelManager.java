@@ -8,19 +8,19 @@ public class LevelManager {
     public int getLevel(){
         return this.level;
     }
-    public void advanceLevel(EnemyManager enemy,ItemManager item,Player player){
+    public void advanceLevel(IEnemyManager enemy, IItemManager item, Player player){
         this.level++;
         player.heal(100);
         enemy.getEnemies().clear();
         item.GetItems().clear();
         if (level == 2){
-            enemy.enemies.add("Vampire");
-            item.AddItem("Magic Scroll");
+            enemy.getEnemies().add("Vampire");
+            item.GetItems().add("Magic Scroll");
         } else if (level == 3) {
-            enemy.enemies.add("Vampire");
-            enemy.enemies.add("Spider");
-            item.AddItem("Health Elixir");
-            item.AddItem("Gold Coin");
+            enemy.getEnemies().add("Vampire");
+            enemy.getEnemies().add("Spider");
+            item.GetItems().add("Health Elixir");
+            item.GetItems().add("Gold Coin");
         }
         System.out.println("Reached level" + level);
     }
